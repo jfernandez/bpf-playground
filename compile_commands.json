@@ -8,12 +8,28 @@
       "bpf",
       "-c",
       "-o",
-      "freplace.o",
-      "freplace.bpf.c"
+      "counter.o",
+      "counter.bpf.c"
     ],
     "directory": "/home/jose/Code/bpf",
-    "file": "/home/jose/Code/bpf/freplace.bpf.c",
-    "output": "/home/jose/Code/bpf/freplace.o"
+    "file": "/home/jose/Code/bpf/counter.bpf.c",
+    "output": "/home/jose/Code/bpf/counter.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/clang",
+      "-O2",
+      "-Wall",
+      "-target",
+      "bpf",
+      "-c",
+      "-o",
+      "new_counter.o",
+      "new_counter.bpf.c"
+    ],
+    "directory": "/home/jose/Code/bpf",
+    "file": "/home/jose/Code/bpf/new_counter.bpf.c",
+    "output": "/home/jose/Code/bpf/new_counter.o"
   },
   {
     "arguments": [
@@ -88,11 +104,11 @@
       "-x",
       "c",
       "-o",
-      "/tmp/freplace-03c523.o",
+      "/tmp/freplace-d671d9.o",
       "freplace.c"
     ],
     "directory": "/home/jose/Code/bpf",
     "file": "/home/jose/Code/bpf/freplace.c",
-    "output": "/tmp/freplace-03c523.o"
+    "output": "/tmp/freplace-d671d9.o"
   }
 ]

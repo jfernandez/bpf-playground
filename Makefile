@@ -2,7 +2,7 @@
 CC := clang
 
 # Compiler flags for both BPF and userspace programs
-CFLAGS := -O2 -Wall
+CFLAGS := -O2 -Wall -g
 
 LDFLAGS := -lbpf
 

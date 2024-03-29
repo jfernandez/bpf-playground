@@ -4,7 +4,7 @@
 
 char _license[] SEC("license") = "GPL";
 
-u64 count = 0;
+__u64 count = 0;
 
 __noinline int increment_count()
 {
@@ -13,7 +13,7 @@ __noinline int increment_count()
 }
 
 SEC("raw_tracepoint/sys_enter")
-int test_enable_stats(void *ctx)
+int counter(void *ctx)
 {
 	return increment_count();
 }
