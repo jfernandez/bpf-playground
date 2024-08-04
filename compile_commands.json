@@ -9,80 +9,12 @@
       "bpf",
       "-c",
       "-o",
-      "arena.o",
-      "arena.bpf.c"
+      "arena_list.o",
+      "arena_list.bpf.c"
     ],
     "directory": "/home/jose/Code/bpf",
-    "file": "/home/jose/Code/bpf/arena.bpf.c",
-    "output": "/home/jose/Code/bpf/arena.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-O2",
-      "-Wall",
-      "-g",
-      "-target",
-      "bpf",
-      "-c",
-      "-o",
-      "counter.o",
-      "counter.bpf.c"
-    ],
-    "directory": "/home/jose/Code/bpf",
-    "file": "/home/jose/Code/bpf/counter.bpf.c",
-    "output": "/home/jose/Code/bpf/counter.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-O2",
-      "-Wall",
-      "-g",
-      "-target",
-      "bpf",
-      "-c",
-      "-o",
-      "fentry.o",
-      "fentry.bpf.c"
-    ],
-    "directory": "/home/jose/Code/bpf",
-    "file": "/home/jose/Code/bpf/fentry.bpf.c",
-    "output": "/home/jose/Code/bpf/fentry.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-O2",
-      "-Wall",
-      "-g",
-      "-target",
-      "bpf",
-      "-c",
-      "-o",
-      "new_counter.o",
-      "new_counter.bpf.c"
-    ],
-    "directory": "/home/jose/Code/bpf",
-    "file": "/home/jose/Code/bpf/new_counter.bpf.c",
-    "output": "/home/jose/Code/bpf/new_counter.o"
-  },
-  {
-    "arguments": [
-      "/usr/bin/clang",
-      "-O2",
-      "-Wall",
-      "-g",
-      "-target",
-      "bpf",
-      "-c",
-      "-o",
-      "simple.o",
-      "simple.bpf.c"
-    ],
-    "directory": "/home/jose/Code/bpf",
-    "file": "/home/jose/Code/bpf/simple.bpf.c",
-    "output": "/home/jose/Code/bpf/simple.o"
+    "file": "/home/jose/Code/bpf/arena_list.bpf.c",
+    "output": "/home/jose/Code/bpf/arena_list.o"
   },
   {
     "arguments": [
@@ -161,12 +93,12 @@
       "-x",
       "c",
       "-o",
-      "/tmp/arena-08ec29.o",
+      "/tmp/arena-0e09c9.o",
       "arena.c"
     ],
     "directory": "/home/jose/Code/bpf",
     "file": "/home/jose/Code/bpf/arena.c",
-    "output": "/tmp/arena-08ec29.o"
+    "output": "/tmp/arena-0e09c9.o"
   },
   {
     "arguments": [
@@ -245,12 +177,12 @@
       "-x",
       "c",
       "-o",
-      "/tmp/counter-fe2d6d.o",
+      "/tmp/counter-1df0e8.o",
       "counter.c"
     ],
     "directory": "/home/jose/Code/bpf",
     "file": "/home/jose/Code/bpf/counter.c",
-    "output": "/tmp/counter-fe2d6d.o"
+    "output": "/tmp/counter-1df0e8.o"
   },
   {
     "arguments": [
@@ -329,12 +261,12 @@
       "-x",
       "c",
       "-o",
-      "/tmp/fentry-db6114.o",
+      "/tmp/fentry-7df996.o",
       "fentry.c"
     ],
     "directory": "/home/jose/Code/bpf",
     "file": "/home/jose/Code/bpf/fentry.c",
-    "output": "/tmp/fentry-db6114.o"
+    "output": "/tmp/fentry-7df996.o"
   },
   {
     "arguments": [
@@ -413,11 +345,11 @@
       "-x",
       "c",
       "-o",
-      "/tmp/freplace-02fbfc.o",
+      "/tmp/freplace-418c40.o",
       "freplace.c"
     ],
     "directory": "/home/jose/Code/bpf",
     "file": "/home/jose/Code/bpf/freplace.c",
-    "output": "/tmp/freplace-02fbfc.o"
+    "output": "/tmp/freplace-418c40.o"
   }
 ]
