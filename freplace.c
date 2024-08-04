@@ -1,6 +1,7 @@
 #include <unistd.h>
 #include "counter_skel.h"
 #include "new_counter_skel.h"
+#include <bpf/bpf.h>
 #include <bpf/libbpf.h>
 
 static int libbpf_print_fn(enum libbpf_print_level level, const char *format,
@@ -13,7 +14,9 @@ int main(int argc, char **argv)
 {
 	struct counter *skel;
 	struct new_counter *ext_skel;
-	int err, prog_fd;
+	struct bpf_prog_info prog_info, ext_prog_info;
+	int err, prog_fd, ext_prog_fd;
+	__u32 prog_info_len, ext_prog_info_len;
 
 	libbpf_set_print(libbpf_print_fn);
 
@@ -66,11 +69,20 @@ int main(int argc, char **argv)
 		goto cleanup;
 	}
 
-	printf("Successfully started! Please run `sudo cat /sys/kernel/debug/tracing/trace_pipe` "
-	       "to see output of the BPF programs.\n");
+	ext_prog_fd = bpf_program__fd(ext_skel->progs.new_increment_count);
+
+	printf("Successfully started!\n");
 
 	for (;;) {
+		prog_info_len = sizeof(prog_info);
+		ext_prog_info_len = sizeof(ext_prog_info);
+		ext_prog_fd = bpf_program__fd(ext_skel->progs.new_increment_count);
+		err = bpf_obj_get_info_by_fd(ext_prog_fd, &ext_prog_info, &ext_prog_info_len);
+		prog_fd = bpf_program__fd(skel->progs.counter);
+		err = bpf_obj_get_info_by_fd(prog_fd, &prog_info, &prog_info_len);
+
 		fprintf(stderr, ".");
+		fprintf(stderr, "count: %llu\n", prog_info.run_cnt);
 		sleep(1);
 	}
 
