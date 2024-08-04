@@ -1,3 +1,7 @@
 .cache
 freplace
+arena
+counter
+fentry
+new_counter
 *.o
